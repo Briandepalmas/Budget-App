@@ -1,13 +1,14 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Read from './components/Read'
+import Create from './components/Create'
+// import Delete from './components/Delete'
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      
+    <div>
+    <Read/>
+    <Create/>
+    {/* <Delete/> */}
     </div>
-  );
+  )
 }
-
-export default App;
