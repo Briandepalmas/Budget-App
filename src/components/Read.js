@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Delete from './Delete'
+import '../App.css'
 export default class Read extends Component {
     state = {
         isLoading: true,
@@ -17,10 +18,18 @@ export default class Read extends Component {
 
     
       render() {
-          let a =0;
+          let itemAmount =0;
+          
         const {employees, isLoading,items} = this.state;
          
-        if (isLoading) {
+        {items.map(item =>
+            <div key={item.id}>
+    
+                 {itemAmount+=item.itemPrice}
+            </div>                   
+          )}
+        
+          if (isLoading) {
           return <p>Loading...</p>;
         }
     
@@ -32,10 +41,7 @@ export default class Read extends Component {
                   <div key={employee.id}>
                     
                     {employee.firstName}
-                    
-                    
-                    {employee.lastName}
-                    
+                    {employee.lastName}                
                     {employee.email}
                     
                     <Delete item={employee.id}/>
@@ -43,16 +49,27 @@ export default class Read extends Component {
                 )}
                
                 {items.map(item =>
-                  <div key={item.id}>
-                    {item.itemName}
-                    {item.itemPrice}
-                    <br></br>
+                  <div  key={item.id}>
+                    <div className="item-list">
+                        <div className="item-name">⚫ {item.itemName}</div>
+                        
+                        <div className="item-price">${item.itemPrice}</div>
+                        <Delete item={item.id}/>
+                    </div>
                     
-                    <Delete item={item.id}/>
-                  </div>                 
+                    
+                    <div id="space"></div>
+                   
+                          
+                   
+                  </div>  
+                              
                 )}
-
-
+                <div className="item-amount">
+                     Total amount spent: $
+                    {itemAmount}  
+                </div>
+                    
               </div>
           
         );

@@ -6,9 +6,8 @@ import Create from './components/Create'
 export default function App() {
   return (
     <div>
-    <Read/>
-    <Create/>
-    {/* <Delete/> */}
+     <Create/>
+     <Read/>
     </div>
   )
 }

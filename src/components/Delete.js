@@ -28,7 +28,7 @@ export default class Delete extends Component {
     render() {
         return (
             <div>
-                <button onClick={this.deleteitem}>DELETE</button>
+                <button id="delete-button" onClick={this.deleteitem}>DELETE</button>
             </div>
         )
     }
