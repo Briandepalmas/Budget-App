@@ -41,16 +41,18 @@ export default class Create extends Component {
     
         return (
             <div>
-                <h2>Enter Items</h2>
-              <div className="App">                  
+             
+              <h1 className="budget-logo">💸My Budget💸</h1>
+              <h1 className="logo">Enter Items ↴</h1>
+              <div>                  
                 
-                <input type="text" name="itemName" placeholder="enter item"
+                <input className="item-input" type="text" name="itemName" placeholder="Enter Item Purchased"
                 value={this.state.itemName} onChange={this.onChange}/>
 
-                <input  
-                type="text" name="itemPrice" placeholder="enter item"
+                <input className="price-input" 
+                type="text" name="itemPrice" placeholder="Price"
                 value={this.state.itemPrice} onChange={this.onChange}/>
-                <button onClick={this.add}>ADD</button>
+                <button className="add-button" onClick={this.add}>ADD</button>
               
               </div> 
              
